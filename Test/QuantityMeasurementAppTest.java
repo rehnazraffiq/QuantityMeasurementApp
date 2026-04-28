@@ -37,5 +37,39 @@ public class QuantityMeasurementAppTest {
 
         assertTrue(f1.equals(f2));
     }
+    @Test
+    public void testInchEquality_SameValue() {
+        QuantityMeasurementApp.Inch I1 = new QuantityMeasurementApp.Inch(1.0);
+        QuantityMeasurementApp.Inch I2 = new QuantityMeasurementApp.Inch(1.0);
+
+        assertTrue(I1.equals(I2));
+    }
+    @Test
+    public void testInchEquality_DifferentValue() {
+        QuantityMeasurementApp.Inch I1 = new QuantityMeasurementApp.Inch(1.0);
+        QuantityMeasurementApp.Inch I2 = new QuantityMeasurementApp.Inch(2.0);
+
+        assertFalse(I1.equals(I2));
+    }
+    @Test
+    public void testInchEquality_NullComparison() {
+        QuantityMeasurementApp.Inch I1 = new QuantityMeasurementApp.Inch(1.0);
+
+        assertFalse(I1.equals(null));
+    }
+    @Test
+    public void testInchEquality_DifferentClass() {
+        QuantityMeasurementApp.Inch I1 = new QuantityMeasurementApp.Inch(1.0);
+        String other = "Not Inch";
+
+        assertFalse(I1.equals(other));
+    }
+    @Test
+    public void testInchEquality_SameReference() {
+        QuantityMeasurementApp.Inch I1 = new QuantityMeasurementApp.Inch(1.0);
+        QuantityMeasurementApp.Inch I2 = I1;
+
+        assertTrue(I1.equals(I2));
+    }
 }
 
